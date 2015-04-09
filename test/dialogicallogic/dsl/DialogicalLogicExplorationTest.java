@@ -34,9 +34,6 @@ public class DialogicalLogicExplorationTest {
 
         is(is("wet").and("cool")).stop();
 
-        // STOP not allwed!!
-        when("x").stop();
-
         isNot(is("cool").and("hot")).stop();
     }
 
