@@ -31,4 +31,12 @@ public final class DialogicalLogic {
     public static WhenScope whenNot(String term) {
         return null;
     }
+
+    public static WhenScope when(FormulaScope formula) {
+        return null;
+    }
+
+    public static WhenScope whenNot(FormulaScope formula) {
+        return null;
+    }
 }

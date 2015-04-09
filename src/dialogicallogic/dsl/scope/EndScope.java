@@ -1,5 +1,5 @@
 package dialogicallogic.dsl.scope;
 
 public interface EndScope extends Scope {
-    void end();
+    void stop();
 }

@@ -7,4 +7,7 @@ public interface WhenScope extends EndScope {
 
     FormulaScope thenNot(String term);
 
+    FormulaScope then(FormulaScope formula);
+
+    FormulaScope thenNot(FormulaScope formula);
 }
