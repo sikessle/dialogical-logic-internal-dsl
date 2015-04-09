@@ -8,36 +8,36 @@ public class DialogicalLogicExplorationTest {
 
     @Test
     void basics() {
-        is("raining").stop();
+        is("raining").end();
 
-        isNot("raining").stop();
+        isNot("raining").end();
 
-        isNot(is("hot").and("wet")).stop();
+        isNot(is("hot").and("wet")).end();
     }
 
     @Test
     void junctors() {
-        is("raining").and("cool").stop();
-        isNot("raining").or("hot").stop();
+        is("raining").and("cool").end();
+        isNot("raining").or("hot").end();
 
-        when("raining").then("wet").stop();
-        when("hot").thenNot("wet").stop();
+        when("raining").then("wet").end();
+        when("hot").thenNot("wet").end();
 
         // (hot -> wet) and irrational)
-        when("hot").then("wet").and("irrational").stop();
+        when("hot").then("wet").and("irrational").end();
 
         // hot -> (wet and irrational)
-        when("hot").then(is("wet").and("irrational")).stop();
+        when("hot").then(is("wet").and("irrational")).end();
 
-        when(isNot("raining").and("hot")).then(is("unknown").and("creepy")).stop();
+        when(isNot("raining").and("hot")).then(is("unknown").and("creepy")).end();
 
-        is("hot").andNot("raining").stop();
+        is("hot").andNot("raining").end();
 
-        isNot(is("wet").or("hot")).stop();
+        isNot(is("wet").or("hot")).end();
 
-        is(is("wet").and("cool")).stop();
+        is(is("wet").and("cool")).end();
 
-        isNot(is("cool").and("hot")).stop();
+        isNot(is("cool").and("hot")).end().eval();
     }
 
 }
