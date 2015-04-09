@@ -23,8 +23,11 @@ public class DialogicalLogicExplorationTest {
         when("raining").then("wet").stop();
         when("hot").thenNot("wet").stop();
 
-        // hot -> (wet and irrational)
+        // (hot -> wet) and irrational)
         when("hot").then("wet").and("irrational").stop();
+
+        // hot -> (wet and irrational)
+        when("hot").then(is("wet").and("irrational")).stop();
 
         when(isNot("raining").and("hot")).then(is("unknown").and("creepy")).stop();
 
