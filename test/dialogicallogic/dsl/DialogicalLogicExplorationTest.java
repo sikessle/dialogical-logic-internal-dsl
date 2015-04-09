@@ -15,7 +15,6 @@ public class DialogicalLogicExplorationTest {
         not(is("hot").and("wet")).stop();
     }
 
-
     @Test
     void junctors() {
         is("raining").and("cool").stop();

@@ -2,6 +2,9 @@ package dialogicallogic.dsl;
 
 import dialogicallogic.dsl.scope.*;
 
+/**
+ * Contains the starting methods
+ */
 public final class DialogicalLogic {
 
     private DialogicalLogic() {
