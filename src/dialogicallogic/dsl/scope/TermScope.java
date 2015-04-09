@@ -5,4 +5,9 @@ public interface TermScope extends EndScope {
     FormulaScope or(String term);
     FormulaScope andNot(String term);
     FormulaScope orNot(String term);
+
+    FormulaScope and(FormulaScope formula);
+    FormulaScope or(FormulaScope formula);
+    FormulaScope andNot(FormulaScope formula);
+    FormulaScope orNot(FormulaScope formula);
 }

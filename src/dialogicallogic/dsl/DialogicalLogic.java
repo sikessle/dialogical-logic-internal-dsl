@@ -19,11 +19,11 @@ public final class DialogicalLogic {
         return null;
     }
 
-    public static NotScope not(String term) {
+    public static NotScope isNot(String term) {
         return null;
     }
 
-    public static NotScope not(FormulaScope formula) {
+    public static NotScope isNot(FormulaScope formula) {
         return null;
     }
 

@@ -10,15 +10,15 @@ public class DialogicalLogicExplorationTest {
     void basics() {
         is("raining").stop();
 
-        not("raining").stop();
+        isNot("raining").stop();
 
-        not(is("hot").and("wet")).stop();
+        isNot(is("hot").and("wet")).stop();
     }
 
     @Test
     void junctors() {
         is("raining").and("cool").stop();
-        not("raining").or("hot").stop();
+        isNot("raining").or("hot").stop();
 
         when("raining").then("wet").stop();
         when("hot").thenNot("wet").stop();
@@ -26,13 +26,18 @@ public class DialogicalLogicExplorationTest {
         // hot -> (wet and irrational)
         when("hot").then("wet").and("irrational").stop();
 
-        when(not("raining").and("hot")).then(is("unknown").and("creepy")).stop();
+        when(isNot("raining").and("hot")).then(is("unknown").and("creepy")).stop();
 
         is("hot").andNot("raining").stop();
 
-        not(is("wet").or("hot")).stop();
+        isNot(is("wet").or("hot")).stop();
 
         is(is("wet").and("cool")).stop();
+
+        // STOP not allwed!!
+        when("x").stop();
+
+        isNot(is("cool").and("hot")).stop();
     }
 
 }
