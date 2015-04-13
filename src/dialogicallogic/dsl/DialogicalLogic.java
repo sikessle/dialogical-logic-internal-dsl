@@ -11,35 +11,35 @@ public final class DialogicalLogic {
         throw new AssertionError("static class");
     }
 
-    public static IsScope is(String term) {
+    public static AtomicScope is(String term) {
         return null;
     }
 
-    public static IsScope is(FormulaScope formula) {
+    public static AtomicScope is(MolecularScope formula) {
         return null;
     }
 
-    public static NotScope isNot(String term) {
+    public static AtomicScope isNot(String term) {
         return null;
     }
 
-    public static NotScope isNot(FormulaScope formula) {
+    public static AtomicScope isNot(MolecularScope formula) {
         return null;
     }
 
-    public static WhenScope when(String term) {
+    public static ImplicationScope when(String term) {
         return null;
     }
 
-    public static WhenScope whenNot(String term) {
+    public static ImplicationScope whenNot(String term) {
         return null;
     }
 
-    public static WhenScope when(FormulaScope formula) {
+    public static ImplicationScope when(MolecularScope formula) {
         return null;
     }
 
-    public static WhenScope whenNot(FormulaScope formula) {
+    public static ImplicationScope whenNot(MolecularScope formula) {
         return null;
     }
 }
