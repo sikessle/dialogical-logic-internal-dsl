@@ -6,8 +6,6 @@ Supports only the following operators:
 - Disjunction "or"
 - Implication "=>"
 - Negation "not"
-- All-quantifier 
-- Exists-quantifier
 
 # Goal
 
