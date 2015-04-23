@@ -1,4 +1,4 @@
-package dialogicallogic.dsl;
+package dialogicallogic.dsl.scope;
 
 import org.junit.Test;
 
