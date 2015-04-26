@@ -8,37 +8,44 @@ import static dialogicallogic.dsl.DialogicalLogic.*;
 public class DialogicalLogicExplorationTest {
 
     @Test
-    void basics() {
-        is("raining").end();
+    public void basics() {
+        is(s("raining")).e();
 
-        isNot("raining").end();
+        isNot(s("raining")).e();
 
-        isNot(is("hot").and("wet")).end();
+        isNot(is(s("hot")).and(s("wet")).e()).e();
+
     }
 
     @Test
-    void junctors() {
-        is("raining").and("cool").end();
-        isNot("raining").or("hot").end();
+    public void connectives() {
+        is(s("raining")).and(s("cool")).e();
+        isNot(s("raining")).or(s("hot")).e();
 
-        when("raining").then("wet").end();
-        when("hot").thenNot("wet").end();
+        when(s("raining")).then(s("wet")).e();
+        when(s("hot")).thenNot(s("wet")).e();
 
         // (hot -> wet) and irrational)
-        when("hot").then("wet").and("irrational").end();
+        when(s("hot")).then(s("wet")).and(s("irrational")).e();
 
         // hot -> (wet and irrational)
-        when("hot").then(is("wet").and("irrational")).end();
+        when(s("hot")).then(is(s("wet")).and(s("irrational")).e()).e();
 
-        when(isNot("raining").and("hot")).then(is("unknown").and("creepy")).end();
+        when(isNot(s("raining")).andNot(s("hot")).e()).then(is(s("unknown")).and(s("creepy")).e()).e();
 
-        is("hot").andNot("raining").end();
+        is(s("hot")).andNot(s("raining")).e();
 
-        isNot(is("wet").or("hot")).end();
+        isNot(is(s("wet")).or(s("hot")).e()).e();
 
-        is(is("wet").and("cool")).end();
+        is(is(s("wet")).and(s("cool")).e()).e();
 
-        isNot(is("cool").and("hot")).end().eval();
+        isNot(is(s("cool")).and(s("hot")).e()).e();
+    }
+
+    @Test
+    public void strings() {
+        System.out.println(is(s("raining")).and(s("cool")).e());
+        System.out.println(when(isNot(s("raining")).andNot(s("hot")).e()).then(is(s("unknown")).and(s("creepy")).e()).e());
     }
 
 }
