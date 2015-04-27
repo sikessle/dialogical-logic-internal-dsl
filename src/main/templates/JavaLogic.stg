@@ -1,0 +1,22 @@
+main(root) ::= <%
+if (<root:statement()>)
+%>
+
+statement(s) ::= <%
+<if(s.statement)><s:single()>
+<else><molecular(s.statements, s.connectives)>
+<endif>
+%>
+
+single(s) ::= <%
+<if(s.negated)>!<endif>
+<s.statement>
+%>
+
+connective(s) ::= <%
+<s.javaCode>
+%>
+
+molecular(statements, connectives) ::= <%
+<statements,connectives: {s,c | <s:statement()> <c:connective()>}>
+%>

@@ -39,4 +39,9 @@ public class MolecularStatement extends Statement {
 
         return super.toString() + sb.toString();
     }
+
+    @Override
+    public String getString() {
+        return toString();
+    }
 }

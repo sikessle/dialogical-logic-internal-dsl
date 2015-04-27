@@ -16,4 +16,9 @@ public class AtomicStatement extends Statement {
     public String toString() {
         return super.toString() + statement;
     }
+
+    @Override
+    public String getString() {
+        return toString();
+    }
 }

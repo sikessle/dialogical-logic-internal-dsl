@@ -1,0 +1,18 @@
+main(root) ::= "Aussage: <root:statement()>"
+
+statement(s) ::= <%
+<if(s.statement)><s:single()>
+<else><molecular(s.statements, s.connectives)>
+<endif>
+%>
+
+single(s) ::= <%
+<if(s.negated)><\u00AC><endif>
+<s.statement>
+%>
+
+connective(s) ::= "<s.text>"
+
+molecular(statements, connectives) ::= <%
+<statements,connectives: {s,c | <s:statement()> <c:connective()>}>
+%>

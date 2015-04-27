@@ -6,12 +6,20 @@ public enum Connective {
         public String toString() {
             return "\u2227";
         }
+
+        public String getJavaCode() {
+            return "&&";
+        }
     },
 
     OR {
         @Override
         public String toString() {
             return "\u2228";
+        }
+
+        public String getJavaCode() {
+            return "||";
         }
     },
 
@@ -20,5 +28,10 @@ public enum Connective {
         public String toString() {
             return "\u21d2";
         }
+    };
+
+    public String getText() {
+        return toString();
     }
+
 }

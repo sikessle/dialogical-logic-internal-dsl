@@ -1,5 +1,7 @@
 package dialogicallogic.dsl.model;
 
+import java.util.List;
+
 public abstract class Statement {
 
     private boolean negated;
@@ -16,8 +18,11 @@ public abstract class Statement {
         this.negated = negated;
     }
 
+
     @Override
     public String toString() {
         return negated ? "\u00AC" : "";
     }
+
+    public abstract String getString();
 }
