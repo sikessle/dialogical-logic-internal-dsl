@@ -11,10 +11,8 @@ public final class DslToFormalLogic {
 
     public static void main(String[] args) {
         String formalTemplate = DslToFormalLogic.class.getResource("/FormalLogic.stg").getPath();
-        String programmerTemplate = DslToFormalLogic.class.getResource("/JavaLogic.stg").getPath();
         Statement statement = createStatementAST();
         applyTemplate(formalTemplate, statement);
-       // applyTemplate(programmerTemplate, statement);
     }
 
     private static void applyTemplate(String templatePath, Statement statement) {
