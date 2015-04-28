@@ -16,7 +16,7 @@ public final class DialogicalLogic {
         throw new AssertionError("static class");
     }
 
-    public static AtomicStatement s(String statement) {
+    public static Statement s(String statement) {
         return new AtomicStatement(statement, false);
     }
 
